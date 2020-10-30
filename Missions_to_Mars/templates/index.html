@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="UTF-8">
-  <title>Landing Page</title>
+  <title>Mission to Mars</title>
 
   <!-- Bring in our bootstrap stylesheet -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -33,14 +33,6 @@
       <div class="col-md-7">
           <h2>Featured Mars Image</h2>
           <img src="{{  listing.featured_img  }}" class="img-thumbnail">
-   <div class="row">
-       <div class="col-md-6">
-            {% for dict_item in listing.imageurl %}
-              <!-- {% for title, img_url in dict_item.items() %} -->
-                  <p>{{title}}</p>
-                  <img src="{{img_url}}" class="img-thumbnail">
-              <!-- {% endfor %} -->
-            {% endfor %}
       </div>
       <div class="col-md-5"><table class="table">
               
@@ -50,19 +42,22 @@
           {{listing.table}}
           <!-- </table> -->
 
-          </div>
-           
-           
-       </div>
-           
-   </div>
-          
-          
-          
+      </div>
     </div>
 
-  </div>
+	<div class="row">
+		<div class="col-md-8">
+			{% for dict_item in listing.imageurl %}
+			  <!-- {% for title, img_url in dict_item.items() %} -->
+			  <img src="{{img_url}}" class="img-thumbnail">
+			  <p>{{title}}</p>
+			  <!-- {% endfor %} -->
+			{% endfor %}
+		</div>
+	</div>
+
 {% endfor %}
+  </div>
 </body>
 
 </html>
